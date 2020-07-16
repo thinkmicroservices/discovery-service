@@ -1,4 +1,4 @@
-## docker-compose -f ./dc-01-discovery.yml up -d
+## docker-compose -f ./dc-02-discovery.yml up -d
 version: "3.7"
 
 services:
