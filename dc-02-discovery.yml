@@ -19,6 +19,7 @@ services:
       - "9200:9200"
     networks:
       - spring_ri_network
+
   ##########
   # Kibana # http://localhost:5601/app/kibana#/home
   ##########
@@ -33,6 +34,7 @@ services:
       - elasticsearch
     networks:
       - spring_ri_network
+
  ###########
  # fluentd #
  ###########
@@ -52,9 +54,10 @@ services:
     depends_on:
       - elasticsearch
   
-    ##############
+  ##############
   # prometheus #
   ##############
+
   prometheus:
     image: prom/prometheus:latest
     volumes:
@@ -69,6 +72,7 @@ services:
   ###########
   # grafana #
   ###########
+
   grafana:
     image: grafana/grafana
     ports:
@@ -108,11 +112,7 @@ services:
 
     depends_on:
       - fluentd
-    ##  - postgresDB
-    ##  - rabbitmq
-
-
-  
+ 
     links:
       - fluentd
     logging:
